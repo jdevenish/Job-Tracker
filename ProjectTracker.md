@@ -14,57 +14,57 @@
 - Build Target Companies / Applications - DRI: Julie
 	- [ ] Cards displaying each job
         - [ ] Contains:
-                - Company Name 
-                - Job Title 
-                - Link to posting
-                - Status
-                - Date Submitted
-                - HR Contact
-                - Image?
+                * Company Name 
+                * Job Title 
+                * Link to posting
+                * Status
+                * Date Submitted
+                * HR Contact
+                * Image?
 	- [ ] Add Card Form
 	    - [ ] Contains:
-                - Company Name 
-                - Job Title 
-                - Link to posting
-                - Status
-                - Date Submitted
-                - HR Contact
-                - Image? 
+                * Company Name 
+                * Job Title 
+                * Link to posting
+                * Status
+                * Date Submitted
+                * HR Contact
+                * Image? 
 
 - Build Job Search Materials - DRI: Justin 
 	- [ ] Table Displaying Materials For Applying to Jobs:
-                - Brand Statement document url
-                - Resume url
-                - GitHub URL
-                - LinkedIn URL
-                - Replit URL
-                - Portfolio URL
+                * Brand Statement document url
+                * Resume url
+                * GitHub URL
+                * LinkedIn URL
+                * Replit URL
+                * Portfolio URL
   
 
 - Build Networking Contacts - DRI: Jayne
 	- [ ] Cards displaying:
-                - Name
-                - Email
-                - Phone #
-                - Company
+                * Name
+                * Email
+                * Phone #
+                * Company
   - [ ] Add Contact Form
           - Fields: 
-              - Name
-              - Email
-              - Phone #
-              - Company
+              * Name
+              * Email
+              * Phone #
+              * Company
 
 - Build Resource Table - DRI: Cameron
 	- [ ] Table displaying job searching resources
         - [ ] Sections:
-              - Job Boards
-              - Personal Branding
-              - Resume + Cover Letter Help
-              - Networking + LinkedIn
-              - Interviewing
-              - Salary / Negotiation
-              - Imposter Syndrome + Confidence Boosters
-              - Technical (all areas)
+              * Job Boards
+              * Personal Branding
+              * Resume + Cover Letter Help
+              * Networking + LinkedIn
+              * Interviewing
+              * Salary / Negotiation
+              * Imposter Syndrome + Confidence Boosters
+              * Technical (all areas)
   
 ### Post MVP
 - [ ] Events Page
