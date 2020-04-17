@@ -20,7 +20,9 @@
         "job" : String,
         "notes": String
       },
-      ...
+      {...},
+      {...},
+      {...}
     ],
     "pointOfContact" : String,
     "icon" : String
@@ -42,7 +44,10 @@
         "email" : String,
         "notes" : String,
         "employer" : String
-      }
+      },
+      {...},
+      {...},
+      {...}
    ]
 }
 
