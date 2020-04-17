@@ -1,6 +1,6 @@
 # Job-Tracker
 
-## *Tracker Overview*
+## **Tracker Overview**
 ### Overview
 * Landing page of website.
 * Overview with instructions on how to use it
@@ -12,7 +12,7 @@ none
 ### Front End
 * Add mocks
 
-## Accounts
+## **Accounts**
 ### Overview
 * Create your own acccount so you can save your work
 
@@ -24,7 +24,7 @@ none
 ### Front End
 none
 
-## Target Companies
+## **Target Companies**
 ### Overview
 * Track the companies/jobs you want to apply for
 
@@ -41,7 +41,7 @@ none
  * Dropdown for multi options
 * Cards for each compay -> modal overlay with details
 
-## Job Search Materials
+## **Job Search Materials**
 ### Overview
 * Central location to keep documents needed for applying to jobs
 
@@ -58,7 +58,7 @@ none
 ### Front End
 * Table or cards?
 
-## Networking Contacts
+## **Networking Contacts**
 ### Overview
 * Keep track of your most important networking contacts here
 
@@ -75,7 +75,7 @@ none
 ### Front End
 * Table or cards?
 
-## Resources
+## **Resources**
 ### Overview
 * Central/Shared API? 
 -* Community Resource
