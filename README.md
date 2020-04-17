@@ -1,6 +1,6 @@
 # Job-Tracker
 
-## Tracker Overview
+## *Tracker Overview*
 ### Overview
 * Landing page of website.
 * Overview with instructions on how to use it
