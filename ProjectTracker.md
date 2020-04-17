@@ -4,14 +4,14 @@
   - [ ] Tablet
   - [ ] Desktop
   
-- Build Welcome Page - DRI: Justin 
+- Build Welcome Page - **DRI: Justin** 
 	- [ ] Add large clean background graphic
 	- [ ] Add Name/Logo
 	- [ ] Add description of service
   - [ ] Create Account / Login 
   - [ ] Header with naviagtion links
 	
-- Build Target Companies / Applications - DRI: Julie
+- Build Target Companies / Applications - **DRI: Julie**
 	- [ ] Cards displaying each job
         - [ ] Contains:
                 * Company Name
@@ -31,7 +31,7 @@
                 * HR Contact
                 * Image? 
 
-- Build Job Search Materials - DRI: Justin 
+- Build Job Search Materials - **DRI: Justin** 
 	- [ ] Table Displaying Materials For Applying to Jobs:
                 * Brand Statement document url
                 * Resume url
@@ -41,7 +41,7 @@
                 * Portfolio URL
   
 
-- Build Networking Contacts - DRI: Jayne
+- Build Networking Contacts - **DRI: Jayne**
 	- [ ] Cards displaying:
                 * Name
                 * Email
@@ -54,7 +54,7 @@
               * Phone #
               * Company
 
-- Build Resource Table - DRI: Cameron
+- Build Resource Table - **DRI: Cameron**
 	- [ ] Table displaying job searching resources
         - [ ] Sections:
               * Job Boards
