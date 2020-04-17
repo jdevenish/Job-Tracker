@@ -14,22 +14,22 @@
 ##### Build Target Companies / Applications - **DRI: Julie**
 -Cards displaying each job
 ##### Contains:
-	- Company Name
-	- Job Title 
-	- Link to posting
-	- Status
-	- Date Submitted
-	- HR Contact
-	- Image?
+- Company Name
+- Job Title 
+- Link to posting
+- Status
+- Date Submitted
+- HR Contact
+- Image?
 ##### Add Card Form
 ##### Contains:
-	- Company Name 
-	- Job Title 
-	- Link to posting
-	- Status
-	- Date Submitted
-	- HR Contact
-	- Image? 
+- Company Name 
+- Job Title 
+- Link to posting
+- Status
+- Date Submitted
+- HR Contact
+- Image? 
 
 ##### Build Job Search Materials - **DRI: Justin** 
 - Table Displaying Materials For Applying to Jobs:
