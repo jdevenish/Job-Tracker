@@ -1,18 +1,18 @@
 ### MVP
-##### Responsive
+#### Responsive
    - Mobile first
    - Tablet
    - Desktop
   
-##### Build Welcome Page - **DRI: Justin** 
+#### Build Welcome Page - **DRI: Justin** 
 - Add large clean background graphic
 - Add Name/Logo
 - Add description of service
   - Create Account / Login 
   - Header with naviagtion links
 	
-##### Build Target Companies / Applications - **DRI: Julie**
--Cards displaying each job
+#### Build Target Companies / Applications - **DRI: Julie**
+##### Cards displaying each job
 ##### Contains:
 - Company Name
 - Job Title 
@@ -31,40 +31,40 @@
 - HR Contact
 - Image? 
 
-##### Build Job Search Materials - **DRI: Justin** 
-- Table Displaying Materials For Applying to Jobs:
-	- Brand Statement document url
-	- Resume url
-	- GitHub URL
-	- LinkedIn URL
-	- Replit URL
-	- Portfolio URL
+#### Build Job Search Materials - **DRI: Justin** 
+##### Table Displaying Materials For Applying to Jobs:
+- Brand Statement document url
+- Resume url
+- GitHub URL
+- LinkedIn URL
+- Replit URL
+- Portfolio URL
   
 
-##### Build Networking Contacts - **DRI: Jayne**
+#### Build Networking Contacts - **DRI: Jayne**
 ##### Cards displaying:
-	- Name
-	- Email
-	- Phone #
-	- Company
+- Name
+- Email
+- Phone #
+- Company
 ##### Add Contact Form
-  Fields: 
-       - Name
-       - Email
-       - Phone #
-       - Company
+##### Fields: 
+- Name
+- Email
+- Phone #
+- Company
 
-##### Build Resource Table - **DRI: Cameron**
+#### Build Resource Table - **DRI: Cameron**
 ##### Table displaying job searching resources
 ##### Sections:
-      - Job Boards
-      - Personal Branding
-      - Resume + Cover Letter Help
-      - Networking + LinkedIn
-      - Interviewing
-      - Salary / Negotiation
-      - Imposter Syndrome + Confidence Boosters
-      - Technical (all areas)
+- Job Boards
+- Personal Branding
+- Resume + Cover Letter Help
+- Networking + LinkedIn
+- Interviewing
+- Salary / Negotiation
+- Imposter Syndrome + Confidence Boosters
+- Technical (all areas)
   
 ### Post MVP
 - [ ] Events Page
