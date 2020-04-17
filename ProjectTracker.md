@@ -14,7 +14,7 @@
 - Build Target Companies / Applications - DRI: Julie
 	- [ ] Cards displaying each job
         - [ ] Contains:
-                * Company Name 
+                * Company Name
                 * Job Title 
                 * Link to posting
                 * Status
