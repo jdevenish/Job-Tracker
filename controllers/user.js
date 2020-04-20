@@ -7,6 +7,7 @@ const updateProfile = (req, res) => {
     User.findOneAndReplace(
         {"userId" : req.body.userId},
         {
+            "userId": req.body.userId,
             "jobSearchMaterials" : req.body.jobSearchMaterials,
             "targetCompanies" : req.body.targetCompanies,
             "networkingContacts" : req.body.networkingContacts
