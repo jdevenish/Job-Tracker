@@ -3,6 +3,7 @@ const User = require("../models/User");
 
 
 const updateProfile = (req, res) => {
+    console.log("request body = ", req.body)
     User.findOneAndReplace(
         {"userId" : req.body.userId},
         {
