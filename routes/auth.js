@@ -13,6 +13,8 @@ router.post('/register', authController.registerNewUser);
 // Authenticate user on login
 router.post('/authenticate', authController.authenticateCredentials);
 
+router.delete('/deleteAccount', withAuth, authController.deleteAccount);
+
 
 module.exports = router;
 

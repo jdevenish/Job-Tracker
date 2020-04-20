@@ -26,21 +26,7 @@ const isValid = (req, res) => {
                 err: err
             });
     });
-
 };
-
-
-function isCorrectPassword(enteredPassword, savedPassword, callback) {
-    // result is boolean value
-    bcrypt.compare(enteredPassword, savedPassword, function (err, result) {
-        if(err){
-            callback(err)
-        } else{
-            callback(err, result)
-        }
-    });
-}
-
 
 const registerNewUser = (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
@@ -149,8 +135,23 @@ const authenticateCredentials = (req, res) => {
     });
 };
 
+const deleteAccount = (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
+    console.log("Deleting account for : ", req.email)
+    // Auth.deleteOne({ email: req.body.email }).then(ack => {
+    //     console.log("deleteOne ack = ", ack)
+    //     User.deleteOne({ "userId" : req.body.email })
+    // }).catch(err => {
+    //     res.status(500).json({
+    //         status: 500,
+    //         error: err
+    //     })
+    // })
+}
+
 module.exports = {
     registerNewUser,
     authenticateCredentials,
-    isValid
+    isValid,
+    deleteAccount
 };

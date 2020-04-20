@@ -13,12 +13,17 @@ const updateProfile = (req, res) => {
             "networkingContacts" : req.body.networkingContacts
         }
     ).then(ack => {
-        console.log("ack = ", ack)
-        res.json({
-            status: 200,
-            message: `Update Profile for ${req.body.userId}`
-        })
-
+        if(ack.nModified < 1){
+            res.json({
+                status: 401,
+                message: `Profile could not be found for ${req.body.userId}`
+            })
+        } else {
+            res.json({
+                status: 200,
+                message: `Update Profile for ${req.body.userId}`
+            })
+        }
     }).catch(err => {
         res.json({
             status: 500,
