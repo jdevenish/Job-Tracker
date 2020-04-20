@@ -27,7 +27,7 @@ function isCorrectPassword(enteredPassword, savedPassword, callback) {
 
 
 const registerNewUser = (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://ga-job-tracker.netlify.app");
+    res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
     Auth.create(req.body).then(auth =>{
         console.log("resonpse to creating auth: ",auth);
         console.log("Creating new user with ID = ", auth.email);
@@ -79,7 +79,7 @@ const registerNewUser = (req, res) => {
 
 
 const authenticateCredentials = (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://ga-job-tracker.netlify.app")
+    res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app")
     const { email, password } = req.body;
     Auth.findOne({ email }, function(err, auth) {
         if (err) {

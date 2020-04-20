@@ -11,7 +11,7 @@ app.use(cookieParser());
 app.use(cors({
     'allowedHeaders': ['sessionId', 'Content-Type'],
     'exposedHeaders': ['sessionId'],
-    'origin': "https://ga-job-tracker.netlify.app",
+    'origin': "https://seirproj3jobtracker.netlify.app",
     'methods': 'GET,PUT,POST,DELETE',
     'credentials': true,
     'preflightContinue': false
