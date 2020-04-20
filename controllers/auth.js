@@ -33,7 +33,7 @@ const registerNewUser = (req, res) => {
         console.log("resonpse to creating auth: ",auth);
         console.log("Creating new user with ID = ", auth.email);
         const newUser = {
-            userId: auth._id,
+            userId: auth.email,
             targetCompanies: [],
             networkingContacts: [],
             jobSearchMaterials: {
@@ -47,7 +47,7 @@ const registerNewUser = (req, res) => {
                 profileSite: ""
             }
         };
-        const token = jwt.sign({email: req.body.email}, secret, {
+        const token = jwt.sign({email: auth.email}, secret, {
             expiresIn: '1h'
         });
         User.create(newUser).then(user => {
@@ -117,7 +117,7 @@ const authenticateCredentials = (req, res) => {
                     const token = jwt.sign(payload, secret, {
                         expiresIn: '1h'
                     });
-                    User.findOne({"userId": req.body.email}).then(user => {
+                    User.findOne({"userId": auth.email}).then(user => {
                         res.status(200).json({
                             status: 200,
                             token: token,
