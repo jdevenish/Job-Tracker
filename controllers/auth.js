@@ -7,11 +7,26 @@ const secret = process.env.SECRET;
 
 
 const isValid = (req, res) => {
-    res.json({
-        status: 200,
-        message: "Valid user",
-        email: req.email
-    })
+    // Issue token
+    const payload = { email : req.email };
+    const token = jwt.sign(payload, secret, {
+        expiresIn: '1h'
+    });
+    User.findOne({"userId": req.email}).then(user => {
+        res.status(200).json({
+            status: 200,
+            token: token,
+            userProfile: user
+        })
+    }).catch(err =>{
+        res.status(500)
+            .json({
+                status: 500,
+                error: "Error verifying user please try again.",
+                err: err
+            });
+    });
+
 };
 
 
