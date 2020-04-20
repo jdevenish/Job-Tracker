@@ -12,12 +12,12 @@ const updateProfile = (req, res) => {
             "networkingContacts" : req.body.networkingContacts
         }
     ).then(ack => {
-        if(ack.acknowledged && ack.modifiedCount > 0){
-            res.json({
-                status: 200,
-                message: `Update Profile for ${req.body.userId}`
-            })
-        }
+        console.log("ack = ", ack)
+        res.json({
+            status: 200,
+            message: `Update Profile for ${req.body.userId}`
+        })
+
     }).catch(err => {
         res.json({
             status: 500,
