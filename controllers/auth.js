@@ -105,26 +105,19 @@ const authenticateCredentials = (req, res) => {
                     error: 'Incorrect email or password'
                 });
         } else {
-            isCorrectPassword(password, auth.password, function(err, same) {
-                if (err) {
-                    console.error(err);
-                    res.status(500)
-                        .json({
-                            status: 500,
-                            error: 'Internal error please try again'
-                        });
-                } else if (!same) {
-                    res.status(401)
-                        .json({
-                            status: 401,
-                            error: 'Incorrect email or password'
-                        });
+            bcrypt.compare(password, auth.password).then(same => {
+                if(!same){
+                    res.status(401).json({
+                                    status: 401,
+                                    error: 'Incorrect email or password'
+                                });
                 } else {
                     // Issue token
                     const payload = { email };
                     const token = jwt.sign(payload, secret, {
                         expiresIn: '1h'
                     });
+                    console.log("Trying to find user: ", auth.email);
                     User.findOne({"userId": auth.email}).then(user => {
                         if(!user){
                             res.status(401).json({
@@ -145,9 +138,13 @@ const authenticateCredentials = (req, res) => {
                             error: err
                         })
                     })
-
                 }
-            });
+            }).catch(err => {
+                res.status(500).json({
+                    status: 500,
+                    error: err
+                })
+            })
         }
     });
 };
