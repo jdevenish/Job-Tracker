@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 const updateProfile = (req, res) => {
     console.log("request body = ", req.body)
-    User.findOneAndReplace(
+    User.replaceOne(
         {"userId" : req.body.userId},
         {
             "userId": req.body.userId,
@@ -29,15 +29,6 @@ const updateProfile = (req, res) => {
 
 };
 
-const deleteProfile = (req, res) => {
-    res.json({
-        status: 200,
-        message: `Delete Profile for ${req.param('token')}`
-    })
-};
-
-
 module.exports = {
-    updateProfile,
-    deleteProfile
+    updateProfile
 };
