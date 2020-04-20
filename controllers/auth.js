@@ -126,10 +126,23 @@ const authenticateCredentials = (req, res) => {
                         expiresIn: '1h'
                     });
                     User.findOne({"userId": auth.email}).then(user => {
-                        res.status(200).json({
-                            status: 200,
+                        if(!user){
+                            res.status(401).json({
+                                status: 401,
+                                userProfile: "user profile not found"
+                            })
+                        } else {
+                            res.status(200).json({
+                                status: 200,
+                                token: token,
+                                userProfile: user
+                            })
+                        }
+                    }).catch(err => {
+                        res.status(500).json({
+                            status: 500,
                             token: token,
-                            userProfile: user
+                            error: err
                         })
                     })
 
