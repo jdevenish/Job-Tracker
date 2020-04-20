@@ -138,14 +138,32 @@ const authenticateCredentials = (req, res) => {
 const deleteAccount = (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
     console.log("Deleting account for : ", req.email)
-    Auth.deleteOne({ email: req.email }).then(ack => {
-        console.log("deleteOne ack = ", ack)
-        User.deleteOne({ "userId" : req.email }).then(ack =>{
-            res.status(200).json({
-                status: 200,
-                message: "Account deleted"
+    Auth.deleteOne({ email: req.email }).then(ackAuth => {
+        if(ackAuth.deletedCount < 1){
+            res.status(500).json({
+                status: 500,
+                error: "Error deleting account"
             })
-        })
+        } else {
+            User.deleteOne({ "userId" : req.email }).then(ackUser =>{
+                if(ackUser.deletedCount < 1){
+                    res.status(500).json({
+                        status: 500,
+                        error: "Error deleting account"
+                    })
+                } else {
+                    res.status(200).json({
+                        status: 200,
+                        message: "Account deleted"
+                    })
+                }
+            }).catch(err => {
+                res.status(500).json({
+                    status: 500,
+                    error: err
+                })
+            })
+        }
     }).catch(err => {
         res.status(500).json({
             status: 500,
