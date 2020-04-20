@@ -28,8 +28,11 @@ app.get("/", (req, res) => {
     })
 });
 
-const userRoutes = require("./routes/auth");
-app.use("/api", userRoutes);
+const authRoutes = require("./routes/auth");
+app.use("/api", authRoutes);
+
+const userRotues = require("./routes/user");
+app.use("/user", userRotues);
 
 
 // Set the port and configure server to listen on that port

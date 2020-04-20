@@ -4,10 +4,10 @@ const userController = require("../controllers/user");
 const withAuth = require('../middleware');
 
 // Update user's profile
-router.put('/user', userController.updateProfile);
+router.put('/update', userController.updateProfile);
 
 // Delete user's profile
-router.delete('/user', userController.deleteProfile);
+router.delete('/delete', userController.deleteProfile);
 
 
 
