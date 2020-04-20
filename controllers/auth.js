@@ -9,7 +9,8 @@ const secret = process.env.SECRET;
 const isValid = (req, res) => {
     res.json({
         status: 200,
-        message: "Valid user"
+        message: "Valid user",
+        email: req.email
     })
 };
 
