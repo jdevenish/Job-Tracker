@@ -17,8 +17,6 @@ app.use(cors({
     'preflightContinue': false
 }));
 
-
-
 // Default Route
 app.get("/", (req, res) => {
     // add redirect at some point
@@ -31,8 +29,11 @@ app.get("/", (req, res) => {
 const authRoutes = require("./routes/auth");
 app.use("/api", authRoutes);
 
-const userRotues = require("./routes/user");
-app.use("/user", userRotues);
+const userRoutes = require("./routes/user");
+app.use("/user", userRoutes);
+
+const resourceRoutes = require("./routes/resource");
+app.use("/resource", resourceRoutes);
 
 
 // Set the port and configure server to listen on that port

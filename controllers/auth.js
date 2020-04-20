@@ -79,7 +79,6 @@ const registerNewUser = (req, res) => {
 
 };
 
-
 const authenticateCredentials = (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app")
     const { email, password } = req.body;
