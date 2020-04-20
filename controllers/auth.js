@@ -147,6 +147,10 @@ const deleteAccount = (req, res) => {
     //         error: err
     //     })
     // })
+    res.status(200).json({
+        status: 200,
+        message: "User deleted"
+    })
 }
 
 module.exports = {
