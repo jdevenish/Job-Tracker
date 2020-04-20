@@ -97,15 +97,8 @@ const registerNewUser = (req, res) => {
 const authenticateCredentials = (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app")
     const { email, password } = req.body;
-    Auth.findOne({ email }, function(err, auth) {
-        if (err) {
-            console.error(err);
-            res.status(500)
-                .json({
-                    status: 500,
-                    error: 'Internal error please try again'
-                });
-        } else if (!auth) {
+    Auth.findOne({ email: req.body.email }).then(auth => {
+        if (!auth) {
             res.status(401)
                 .json({
                     status: 401,

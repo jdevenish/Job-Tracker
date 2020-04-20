@@ -1,26 +1,30 @@
 const User = require("../models/User");
 
 
-const getProfile = (req, res) => {
-    res.json({
-        status: 200,
-        message: `Get Profile for ${req.param('token')}`
-    })
-};
-
-const createProfile = (req, res) => {
-
-    res.json({
-        status: 200,
-        message: `Create Profile for ${req.param('token')}`
-    })
-};
 
 const updateProfile = (req, res) => {
-    res.json({
-        status: 200,
-        message: `Update Profile for ${req.param('token')}`
+    User.findOneAndReplace(
+        {"userId" : req.body.userId},
+        {
+            "jobSearchMaterials" : req.body.jobSearchMaterials,
+            "targetCompanies" : req.body.targetCompanies,
+            "networkingContacts" : req.body.networkingContacts
+        }
+    ).then(ack => {
+        if(ack.acknowledged && ack.modifiedCount > 0){
+            res.json({
+                status: 200,
+                message: `Update Profile for ${req.body.userId}`
+            })
+        }
+    }).catch(err => {
+        res.json({
+            status: 500,
+            message: "Error updating user profile. Please try again later",
+            error: err
+        })
     })
+
 };
 
 const deleteProfile = (req, res) => {
@@ -32,8 +36,6 @@ const deleteProfile = (req, res) => {
 
 
 module.exports = {
-    getProfile,
-    createProfile,
     updateProfile,
     deleteProfile
 };
