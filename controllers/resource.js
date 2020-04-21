@@ -18,6 +18,7 @@ const addResource = (req, res) => {
     const keys = Object.keys(req.body);
     console.log("keys = ", req.body[keys[0]]);
     Resource.findOne({"category" : keys[0]}).then(resourceObj => {
+            console.log("After finding ",resourceObj.resources[0])
             resourceObj.resources.concat(req.body[keys[0]])
         }).catch(err => {
             console.log(`Error updating resource ${keys[0]}. ${err}`);
