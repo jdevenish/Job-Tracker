@@ -6,7 +6,7 @@ const resourceSeedData = require("./resourceSeed.json");
 
 Resources.deleteMany({}).then(() => {
     console.log("Deleted all users");
-    Resources.insert(resourceSeedData).then(() => {
+    Resources.create(resourceSeedData).then(() => {
         console.log("Resources seeded");
         mongoose.connection.close()
     }).catch(err => {
