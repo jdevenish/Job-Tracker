@@ -19,7 +19,7 @@ const addResource = (req, res) => {
     console.log("keys = ", req.body[keys[0]]);
     Resource.findOne({"category" : keys[0]}).then(resourceObj => {
             console.log("After finding ",resourceObj.resources[0])
-            resourceObj.resources.concat(req.body[keys[0]])
+            resourceObj.resources.push(req.body[keys[0]][0])
 
             resourceObj.save();
             res.status(200).json({
