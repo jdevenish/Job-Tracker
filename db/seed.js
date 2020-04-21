@@ -51,6 +51,9 @@ Resource.deleteMany({}).then(() => {
                                 Resource.create({
                                     category: "Technical",
                                     resources: resourceSeedData.technical
+                                }).then(() => {
+                                    console.log("Data seeded successfully");
+                                    mongoose.connection.close()
                                 })
                             })
                         })

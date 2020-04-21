@@ -2,8 +2,12 @@ const Resource = require("../models/Resource");
 
 
 const getAll = (req, res) => {
-    Resource.find().then(resources => {
-        res.status(200).json(resources)
+    Resource.find({},{_id:0}).then(resources => {
+        const returnObj = {}
+        for(let i=0; i<resources.length; i++){
+            returnObj[resources[i].category] = resources[i].resources
+        }
+        res.status(200).json(returnObj)
     })
 
 };
