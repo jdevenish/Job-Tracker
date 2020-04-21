@@ -16,7 +16,7 @@ const getAll = (req, res) => {
 const addResource = (req, res) => {
     // const obj = JSON.parse(req.body);
     const keys = Object.keys(req.body);
-    console.log("keys = ", keys)
+    console.log("keys = ", keys[0])
     Resource.findOne({"category" : keys[0]}).then(resource => {
             resource.data.push(req.body.keys[0])
         }).catch(err => {
