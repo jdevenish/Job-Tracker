@@ -2,7 +2,7 @@ const mongoose = require('../db/connection');
 
 // Model Access
 const Resources = require("../models/Resource.json");
-import resourceSeedData from "./resourceSeed.json";
+const resourceSeedData = require("./resourceSeed.json");
 
 Resources.deleteMany({}).then(() => {
     console.log("Deleted all users");
