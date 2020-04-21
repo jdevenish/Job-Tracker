@@ -16,9 +16,9 @@ const getAll = (req, res) => {
 const addResource = (req, res) => {
     // const obj = JSON.parse(req.body);
     const keys = Object.keys(req.body);
-    console.log("keys = ", req.body.keys[0])
+    console.log("keys = ", req.body[keys[0]])
     Resource.findOne({"category" : keys[0]}).then(resourceObj => {
-            resourceObj.resources.push(req.body.keys[0])
+            resourceObj.resources.push(req.body[keys[0]])
         }).catch(err => {
             console.log(`Error updating resource ${keys[0]}. ${err}`);
             res.status(500).json({
