@@ -8,9 +8,20 @@ const ResourceSchema = new mongoose.Schema({
     views: Number
 });
 
+const ResourcesSchema =  new mongoose.Schema({
+    jobBoards: [ ResourceSchema ],
+    personalBranding: [ ResourceSchema ],
+    resumeAndCoverLetter: [ ResourceSchema ],
+    networking: [ ResourceSchema ],
+    interviewing: [ ResourceSchema ],
+    salaryNegotiation: [ ResourceSchema ],
+    imposterSyndrome: [ ResourceSchema ],
+    technical: [ ResourceSchema ],
+});
+
 
 //model
-const Resource = mongoose.model("Resource", ResourceSchema);
+const Resources = mongoose.model("Resources", ResourcesSchema);
 
 //export
-module.exports = Resource;
+module.exports = Resources;
