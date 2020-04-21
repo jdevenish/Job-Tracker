@@ -2,7 +2,7 @@ const Resource = require("../models/Resource");
 
 
 const getAll = (req, res) => {
-    Resource.find({},{_id:0}).then(resources => {
+    Resource.find({},{"resources._id" : 0}).then(resources => {
         const returnObj = {}
         for(let i=0; i<resources.length; i++){
             returnObj[resources[i].category] = resources[i].resources
@@ -14,8 +14,9 @@ const getAll = (req, res) => {
 
 
 const addResource = (req, res) => {
-    const obj = JSON.parse(req.body);
-    const keys = Object.keys(obj);
+    // const obj = JSON.parse(req.body);
+    const keys = Object.keys(req.body);
+    console.log("keys = ", keys)
     Resource.findOne({"category" : keys[0]}).then(resource => {
             resource.data.push(req.body.keys[0])
         }).catch(err => {
