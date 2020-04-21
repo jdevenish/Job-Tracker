@@ -29,7 +29,7 @@ const isValid = (req, res) => {
 };
 
 const registerNewUser = (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
+    // res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
     Auth.create(req.body).then(auth =>{
         console.log("resonpse to creating auth: ",auth);
         console.log("Creating new user with ID = ", auth.email);
@@ -80,7 +80,7 @@ const registerNewUser = (req, res) => {
 };
 
 const authenticateCredentials = (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app")
+    // res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app")
     const { email, password } = req.body;
     Auth.findOne({ email: req.body.email }).then(auth => {
         if (!auth) {
@@ -135,7 +135,7 @@ const authenticateCredentials = (req, res) => {
 };
 
 const deleteAccount = (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
+    // res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
     console.log("Deleting account for : ", req.email)
     Auth.deleteOne({ email: req.email }).then(ackAuth => {
         if(ackAuth.deletedCount < 1){

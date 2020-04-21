@@ -50,7 +50,7 @@ const removeResource = (req, res) => {
             message: `Error removing resource ${keys[0]}. ${err}`
         })
     })
-}
+};
 
 module.exports = {
     getAll,

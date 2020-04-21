@@ -7,15 +7,16 @@ const cookieParser = require('cookie-parser');
 
 app.use(parser.json());
 app.use(cookieParser());
-// app.use(cors({credentials: true, origin: true}));
-app.use(cors({
-    'allowedHeaders': ['sessionId', 'Content-Type'],
-    'exposedHeaders': ['sessionId'],
-    'origin': "https://seirproj3jobtracker.netlify.app",
-    'methods': 'GET,PUT,POST,DELETE',
-    'credentials': true,
-    'preflightContinue': false
-}));
+// // app.use(cors({credentials: true, origin: true}));
+// app.use(cors({
+//     'allowedHeaders': ['sessionId', 'Content-Type'],
+//     'exposedHeaders': ['sessionId'],
+//     'origin': "https://seirproj3jobtracker.netlify.app",
+//     'methods': 'GET,PUT,POST,DELETE',
+//     'credentials': true,
+//     'preflightContinue': false
+// }));
+app.use(cors());
 
 // Default Route
 app.get("/", (req, res) => {
