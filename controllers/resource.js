@@ -3,7 +3,7 @@ const Resource = require("../models/Resource");
 
 const getAll = (req, res) => {
     Resource.find({},{"resources._id" : 0}).then(resources => {
-        const returnObj = {}
+        const returnObj = {};
         for(let i=0; i<resources.length; i++){
             returnObj[resources[i].category] = resources[i].resources
         }
@@ -14,13 +14,9 @@ const getAll = (req, res) => {
 
 
 const addResource = (req, res) => {
-    // const obj = JSON.parse(req.body);
     const keys = Object.keys(req.body);
-    console.log("keys = ", req.body[keys[0]]);
     Resource.findOne({"category" : keys[0]}).then(resourceObj => {
-            console.log("After finding ",resourceObj.resources[0])
             resourceObj.resources.push(req.body[keys[0]][0])
-
             resourceObj.save();
             res.status(200).json({
                 status: 200,
@@ -33,10 +29,28 @@ const addResource = (req, res) => {
                 message: `Error updating resource ${keys[0]}. ${err}`
             })
     })
-
 };
+
+const removeResource = (req, res) => {
+    const keys = Object.keys(req.body);
+    Resource.findOne({"category" : keys[0]}).then(resourceObj => {
+        resourceObj.slice(resourceObj.indexOf(req.body[keys[0]][0]),1)
+        resourceObj.save();
+        res.status(200).json({
+            status: 200,
+            message: "Resource removed"
+        })
+    }).catch(err => {
+        console.log(`Error removing resource ${keys[0]}. ${err}`);
+        res.status(500).json({
+            status: 500,
+            message: `Error removing resource ${keys[0]}. ${err}`
+        })
+    })
+}
 
 module.exports = {
     getAll,
-    addResource
+    addResource,
+    removeResource
 };

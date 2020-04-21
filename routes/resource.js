@@ -3,11 +3,14 @@ const router = express.Router();
 const resourceController = require("../controllers/resource");
 
 
-// Validate user token
+// Return all resources
 router.get('/getAll', resourceController.getAll);
 
-// Authenticate user on login
+// Add new resource
 router.put('/add', resourceController.addResource);
+
+// Delete resource
+router.delete('/remove', resourceController.removeResource)
 
 module.exports = router;
 
