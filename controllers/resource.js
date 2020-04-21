@@ -34,7 +34,8 @@ const addResource = (req, res) => {
 const removeResource = (req, res) => {
     const keys = Object.keys(req.body);
     Resource.findOne({"category" : keys[0]}).then(resourceObj => {
-        resourceObj.resources.slice(resourceObj.resources.indexOf(req.body[keys[0]][0]),1)
+        // resourceObj.resources.slice(resourceObj.resources.indexOf(req.body[keys[0]][0]),1)
+        resourceObj.resources.remove({"url": req.body[keys[0]][0].url})
         resourceObj.save();
         res.status(200).json({
             status: 200,
