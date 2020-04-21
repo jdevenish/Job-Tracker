@@ -5,7 +5,7 @@ const getAll = (req, res) => {
     Resource.find().then(resources => {
         res.json({
             status: 200,
-            resources
+            resources: resources[0]
         })
     })
 
