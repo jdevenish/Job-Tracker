@@ -3,21 +3,25 @@ const Resource = require("../models/Resource");
 
 const getAll = (req, res) => {
     Resource.find().then(resources => {
-        const resource = resources[0]
-        res.status(200).json(resource)
+        res.status(200).json(resources)
     })
 
 };
 
 
 const addResource = (req, res) => {
-    Resource.insert(req.body).then(ack => {
-        console.log("Add Resource response:  ", ack)
-        res.json({
-            status: 200,
-            message: "Resource added"
-        })
+    const obj = JSON.parse(req.body);
+    const keys = Object.keys(obj);
+    Resource.findOne({"category" : keys[0]}).then(resource => {
+            resource.data.push(req.body.keys[0])
+        }).catch(err => {
+            console.log(`Error updating resource ${keys[0]}. ${err}`);
+            res.status(500).json({
+                status: 500,
+                message: `Error updating resource ${keys[0]}. ${err}`
+            })
     })
+
 };
 
 module.exports = {
