@@ -1,7 +1,7 @@
 const mongoose = require('../db/connection');
 
 // Model Access
-const Resources = require("../models/Resource.json");
+const Resources = require("../models/Resource");
 const resourceSeedData = require("./resourceSeed.json");
 
 Resources.deleteMany({}).then(() => {
