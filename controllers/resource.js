@@ -3,9 +3,10 @@ const Resource = require("../models/Resource");
 
 const getAll = (req, res) => {
     Resource.find().then(resources => {
+        const resourceObj = resources[0]
         res.json({
             status: 200,
-            resources: resources[0]
+            resourceObj
         })
     })
 
