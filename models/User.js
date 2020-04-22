@@ -10,10 +10,11 @@ const JobSchema = new mongoose.Schema({
 });
 
 const TargetCompanySchema = new mongoose.Schema({
-    name: String,
-    jobs: [ JobSchema ],
-    pointOfContact: String,
-    icon: String
+    companyName: String,
+    jobPosition: String,
+    jobURL: String,
+    date: Date,
+    pointOfContact: String
 });
 
 const NetworkingContactSchema = new mongoose.Schema({
@@ -24,7 +25,13 @@ const NetworkingContactSchema = new mongoose.Schema({
     employer : String
 });
 
+// const materialSchema = new mongoose.Schema({
+//     title: String,
+//     url: String
+// });
 
+// TODO:
+// * Change jobSearchMaterials into array instead of object.
 const UserSchema = new mongoose.Schema({
     userId: String,
     targetCompanies: [ TargetCompanySchema ],

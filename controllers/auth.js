@@ -29,7 +29,6 @@ const isValid = (req, res) => {
 };
 
 const registerNewUser = (req, res) => {
-    // res.setHeader("Access-Control-Allow-Origin", "https://seirproj3jobtracker.netlify.app");
     Auth.create(req.body).then(auth =>{
         console.log("resonpse to creating auth: ",auth);
         console.log("Creating new user with ID = ", auth.email);
