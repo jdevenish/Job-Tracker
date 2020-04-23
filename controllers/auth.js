@@ -58,7 +58,7 @@ const registerNewUser = (req, res) => {
             })
         }).catch(err => {
             console.log("error creating user profile:  ", err);
-            res.status(500)
+            res.status(200)
                 .json({
                     status: 500,
                     error: "Error creating user profile.",
@@ -67,7 +67,7 @@ const registerNewUser = (req, res) => {
                 });
         })
     }).catch(err =>{
-        res.status(500)
+        res.status(200)
             .json({
                 status: 500,
                 error: "Error registering new user please try again.",
