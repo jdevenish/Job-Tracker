@@ -19,7 +19,7 @@ const isValid = (req, res) => {
             userProfile: user
         })
     }).catch(err =>{
-        res.status(500)
+        res.status(200)
             .json({
                 status: 500,
                 error: "Error verifying user please try again.",
@@ -138,14 +138,14 @@ const deleteAccount = (req, res) => {
     console.log("Deleting account for : ", req.email)
     Auth.deleteOne({ email: req.email }).then(ackAuth => {
         if(ackAuth.deletedCount < 1){
-            res.status(500).json({
+            res.status(200).json({
                 status: 500,
                 error: "Error deleting account"
             })
         } else {
             User.deleteOne({ "userId" : req.email }).then(ackUser =>{
                 if(ackUser.deletedCount < 1){
-                    res.status(500).json({
+                    res.status(200).json({
                         status: 500,
                         error: "Error deleting account"
                     })
@@ -156,7 +156,7 @@ const deleteAccount = (req, res) => {
                     })
                 }
             }).catch(err => {
-                res.status(500).json({
+                res.status(200).json({
                     status: 500,
                     error: err
                 })
