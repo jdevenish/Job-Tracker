@@ -83,7 +83,7 @@ const authenticateCredentials = (req, res) => {
     const { email, password } = req.body;
     Auth.findOne({ email: req.body.email }).then(auth => {
         if (!auth) {
-            res.status(401)
+            res.status(200)
                 .json({
                     status: 401,
                     error: 'Incorrect email or password'
@@ -91,7 +91,7 @@ const authenticateCredentials = (req, res) => {
         } else {
             bcrypt.compare(password, auth.password).then(same => {
                 if(!same){
-                    res.status(401).json({
+                    res.status(200).json({
                                     status: 401,
                                     error: 'Incorrect email or password'
                                 });
@@ -104,7 +104,7 @@ const authenticateCredentials = (req, res) => {
                     console.log("Trying to find user: ", auth.email);
                     User.findOne({"userId": auth.email}).then(user => {
                         if(!user){
-                            res.status(401).json({
+                            res.status(200).json({
                                 status: 401,
                                 userProfile: "user profile not found"
                             })
