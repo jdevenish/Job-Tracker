@@ -23,7 +23,6 @@ const addResource = (req, res) => {
                 message: "Resource added"
             })
         }).catch(err => {
-            console.log(`Error updating resource ${keys[0]}. ${err}`);
             res.status(500).json({
                 status: 500,
                 message: `Error updating resource ${keys[0]}. ${err}`
@@ -34,7 +33,6 @@ const addResource = (req, res) => {
 const removeResource = (req, res) => {
     const keys = Object.keys(req.body);
     Resource.findOne({"category" : keys[0]}).then(resourceObj => {
-        // resourceObj.resources.slice(resourceObj.resources.indexOf(req.body[keys[0]][0]),1)
         resourceObj.resources = resourceObj.resources.filter((resource) => {
             return resource.url !== req.body[keys[0]][0].url
         });
@@ -44,7 +42,6 @@ const removeResource = (req, res) => {
             message: "Resource removed"
         })
     }).catch(err => {
-        console.log(`Error removing resource ${keys[0]}. ${err}`);
         res.status(500).json({
             status: 500,
             message: `Error removing resource ${keys[0]}. ${err}`

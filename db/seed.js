@@ -4,20 +4,6 @@ const mongoose = require('../db/connection');
 const Resource = require("../models/Resource");
 const resourceSeedData = require("./resourceSeed.json");
 
-// Resources.deleteMany({}).then(() => {
-//     console.log("Deleted all users");
-//     Resources.create(resourceSeedData).then(() => {
-//         console.log("Resources seeded");
-//         mongoose.connection.close()
-//     }).catch(err => {
-//         console.log("Error seeding resource data: ", err)
-//         mongoose.connection.close()
-//     })
-// }).catch(err => {
-//     console.log("Error deleting resource data: ", err)
-//     mongoose.connection.close()
-// });
-
 Resource.deleteMany({}).then(() => {
     console.log("Deleted all users");
     Resource.create({

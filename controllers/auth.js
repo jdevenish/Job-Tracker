@@ -30,8 +30,6 @@ const isValid = (req, res) => {
 
 const registerNewUser = (req, res) => {
     Auth.create(req.body).then(auth =>{
-        console.log("resonpse to creating auth: ",auth);
-        console.log("Creating new user with ID = ", auth.email);
         const newUser = {
             userId: auth.email,
             targetCompanies: [],
@@ -57,7 +55,6 @@ const registerNewUser = (req, res) => {
                 userProfile: user
             })
         }).catch(err => {
-            console.log("error creating user profile:  ", err);
             res.status(200)
                 .json({
                     status: 500,

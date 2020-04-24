@@ -1,4 +1,3 @@
-
 const mongoose = require('../db/connection');
 
 // Schema
@@ -14,7 +13,6 @@ const TargetCompanySchema = new mongoose.Schema({
     pointOfContact: String,
     icon: String
 });
-
 
 //model
 const TargetCompany = mongoose.model("TargetCompany", TargetCompanySchema);

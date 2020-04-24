@@ -1,6 +1,4 @@
 const mongoose = require('../db/connection');
-const TargetCompany = require("./TargetCompany");
-const NetworkingContact = require("./NetworkingContact")
 
 // Schema
 const JobSchema = new mongoose.Schema({
@@ -24,11 +22,6 @@ const NetworkingContactSchema = new mongoose.Schema({
     notes : String,
     employer : String
 });
-
-// const materialSchema = new mongoose.Schema({
-//     title: String,
-//     url: String
-// });
 
 // TODO:
 // * Change jobSearchMaterials into array instead of object.
