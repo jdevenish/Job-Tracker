@@ -79,24 +79,24 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Build Welcome Page on Mobile | H | 8hrs| 6hrs | 0hrs |
 | Build Welcome Page on Desktop | H | 8hrs| 6hrs | 0hrs |
 | Build Welcome Page API | H | 4hrs| 8hrs | 0hrs |
-| Build Target Companies / Applications on Mobile | H | 8hrs| 0hrs | 0hrs |
-| Build Target Companies / Applications on Desktop | H | 8hrs| 0hrs | 0hrs |
-| Build Target Companies / Applications API | H | 4hrs| 0hrs | 0hrs |
+| Build Target Companies / Applications on Mobile | H | 8hrs| 10hrs | 0hrs |
+| Build Target Companies / Applications on Desktop | H | 8hrs| 10hrs | 0hrs |
+| Build Target Companies / Applications API | H | 4hrs| 2hrs | 0hrs |
 | Build Job Search Materials on Mobile | H | 8hrs| 3hrs | 0hrs |
 | Build Job Search Materials on Desktop | H | 8hrs| 3hrs | 0hrs |
 | Build Job Search Materials API | H | 4hrs| 1.5hrs | 0hrs |
-| Build Networking Contacts on Mobile | H | 8hrs| 0hrs | 0hrs |
-| Build Networking Contacts on Desktop | H | 8hrs| 0hrs | 0hrs |
+| Build Networking Contacts on Mobile | H | 8hrs| 10hrs | 0hrs |
+| Build Networking Contacts on Desktop | H | 8hrs| 10hrs | 0hrs |
 | Build Networking Contacts API | H | 4hrs| 1.5hrs | 0hrs |
-| Build Resources on Mobile | H | 8hrs| 0hrs | 0hrs |
-| Build Resources on Desktop | H | 8hrs| 0hrs | 0hrs |
+| Build Resources on Mobile | H | 8hrs| 10hrs | 0hrs |
+| Build Resources on Desktop | H | 8hrs| 10hrs | 0hrs |
 | Build Resources API | H | 4hrs| 1.5hrs | 0hrs |
 | Frontend Deployment | H | 4hrs | 2hrs | 0hrs |
 | Backend Deployment | H | 4hrs | 2hrs | 0hrs |
-| Styling Cleanup | M | 4hrs | 0hrs | 0hrs |
-| Code clean up & Testing | M | 3hrs | 0hrs | 0hrs |
+| Styling Cleanup | M | 4hrs | 5hrs | 0hrs |
+| Code clean up & Testing | M | 3hrs | 3hrs | 0hrs |
 | Write medium article / release notes | M | 3hrs | 0hrs | 0hrs |
-| Total | H | 118hrs| 34.5hrs | 0hrs |
+| Total | H | 118hrs| 104.5hrs | 0hrs |
 
 
 ## Additional Libraries ##
