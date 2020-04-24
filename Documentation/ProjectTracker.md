@@ -112,6 +112,39 @@ Back End:
 * JSON web token
 
 ## Code Snippet
+### Dynamicaly changing fonts bound by upper and lower limits
+This function will scale the text font by 1vw + 0.5vh as long as it's above 10px and below 20px.
+```
+font-size: clamp(10px ,1vw + 0.5vh, 20px);
+```
+
+### Easily check media queries in the js code instead of handling everything through CSS
+Using the `useMediaQuery` library from react-responsive, you can check the screen size while building your component for a more customized web and mobile experience. 
+```
+const isDesktop = useMediaQuery({query: "(min-width:1020px)"}) 
+```
+
+### Validate authentication before allowing the call to continue
+When an API call comes in on a restricted route, this function will check if the provided token is valid or not. If it is, the function will decode the email address and add it to the request before allowing the call to proceed.  
+```
+const withAuth = function(req, res, next) {
+    const token = req.param('token');
+    if (!token) {
+        res.status(401).send(`Unauthorized: No token provided; ${req.params}`);
+    } else {
+        jwt.verify(token, secret, function(err, decoded) {
+            if (err) {
+                res.status(401).send('Unauthorized: Invalid token');
+            } else {
+                console.log(decoded.email)
+                req.email = decoded.email;
+                next();
+            }
+        });
+    }
+};
+```
+
 
 ## Issues and Resolutions
 ### Front End
